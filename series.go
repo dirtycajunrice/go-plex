@@ -56,5 +56,5 @@ type Metadata struct {
 }
 
 func (s *Series) Scrobble() error {
-	return s.l.s.scrobble(s.RatingKey)
+	return s.l.s.Scrobble(s.RatingKey)
 }

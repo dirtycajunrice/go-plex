@@ -59,6 +59,6 @@ func (s *Server) Libraries() ([]Library, error) {
 	return lr.Data.Sections, nil
 }
 
-func (s *Server) scrobble(ratingKey int) error {
-	return s.command(fmt.Sprintf("/:/scrobble?identifier=com.plexapp.plugins.library&key=%d", ratingKey))
+func (s *Server) Scrobble(ratingKey int) error {
+	return s.command(fmt.Sprintf("/:/Scrobble?identifier=com.plexapp.plugins.library&key=%d", ratingKey))
 }
