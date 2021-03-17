@@ -9,6 +9,15 @@ type libraryResponse struct {
 	Data libraryData `json:"MediaContainer"`
 }
 
+type data struct {
+	Size            int    `json:"size"`
+	AllowSync       bool   `json:"allowSync"`
+	Identifier      string `json:"identifier"`
+	MediaTagPrefix  string `json:"mediaTagPrefix"`
+	MediaTagVersion int    `json:"mediaTagVersion"`
+	Title1          string `json:"title1"`
+}
+
 type libraryData struct {
 	data
 	Sections []Library `json:"Directory"`
