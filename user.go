@@ -45,7 +45,7 @@ type User struct {
 	ExperimentalFeatures    bool         `json:"experimentalFeatures" `
 	TwoFactorEnabled        bool         `json:"twoFactorEnabled" `
 	BackupCodesCreated      bool         `json:"backupCodesCreated"`
-	app                     App
+	app                     *App
 }
 
 type Subscription struct {

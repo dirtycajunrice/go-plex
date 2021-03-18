@@ -86,5 +86,6 @@ func (a *App) User(authToken string) (*User, error) {
 	if err != nil {
 		return nil, err
 	}
+	u.app = a
 	return &u, err
 }
