@@ -68,6 +68,10 @@ func (l *Library) Series(filter bool) ([]Series, error) {
 	if err != nil {
 		return nil, err
 	}
-
-	return sr.Data.Series, nil
+	s := make([]Series, 0)
+	for _, i := range sr.Data.Series {
+		i.l = l
+		s = append(s, i)
+	}
+	return s, nil
 }

@@ -55,8 +55,12 @@ func (s *Server) Libraries() ([]Library, error) {
 	if err != nil {
 		return nil, err
 	}
-
-	return lr.Data.Sections, nil
+	l := make([]Library, 0)
+	for _, i := range lr.Data.Sections {
+		i.s = s
+		l = append(l, i)
+	}
+	return l, nil
 }
 
 func (s *Server) Scrobble(ratingKey int) error {
