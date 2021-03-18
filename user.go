@@ -85,6 +85,10 @@ func (u *User) Servers() ([]Server, error) {
 	if err != nil {
 		return nil, err
 	}
-
-	return mcXML.Servers, nil
+	s := make([]Server, 0)
+	for _, i := range mcXML.Servers {
+		i.app = u.app
+		s = append(s, i)
+	}
+	return s, nil
 }

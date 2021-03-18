@@ -30,7 +30,7 @@ type Server struct {
 	UpdatedAt         UnixTimestamp `xml:"updatedAt,attr" json:"-"`
 	Version           string        `xml:"version,attr"`
 	OwnerId           int           `xml:"ownerId,attr"`
-	app               App
+	app               *App
 }
 
 func (s *Server) URL() string {
