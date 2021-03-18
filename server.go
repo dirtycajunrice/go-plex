@@ -16,20 +16,20 @@ type mediaContainerXML struct {
 
 type Server struct {
 	XMLName           xml.Name      `xml:"Server" json:"-"`
-	AccessToken       string        `xml:"accessToken,attr" `
-	Address           string        `xml:"address,attr" `
-	CreatedAt         UnixTimestamp `xml:"createdAt,attr" json:"-" `
-	Host              string        `xml:"host,attr" `
-	LocalAddresses    string        `xml:"localAddresses,attr" `
-	MachineIdentifier string        `xml:"machineIdentifier,attr" `
-	Name              string        `xml:"name,attr" `
-	Owned             bool          `xml:"owned,attr" `
-	Port              int           `xml:"port,attr" `
-	Scheme            string        `xml:"scheme,attr" `
-	Synced            bool          `xml:"synced,attr" `
-	UpdatedAt         UnixTimestamp `xml:"updatedAt,attr" json:"-" `
-	Version           string        `xml:"version,attr" `
-	OwnerId           int           `xml:"ownerId,attr" `
+	AccessToken       string        `xml:"accessToken,attr"`
+	Address           string        `xml:"address,attr"`
+	CreatedAt         UnixTimestamp `xml:"createdAt,attr" json:"-"`
+	Host              string        `xml:"host,attr"`
+	LocalAddresses    string        `xml:"localAddresses,attr"`
+	MachineIdentifier string        `xml:"machineIdentifier,attr"`
+	Name              string        `xml:"name,attr"`
+	Owned             bool          `xml:"owned,attr"`
+	Port              int           `xml:"port,attr"`
+	Scheme            string        `xml:"scheme,attr"`
+	Synced            bool          `xml:"synced,attr"`
+	UpdatedAt         UnixTimestamp `xml:"updatedAt,attr" json:"-"`
+	Version           string        `xml:"version,attr"`
+	OwnerId           int           `xml:"ownerId,attr"`
 	app               App
 }
 
