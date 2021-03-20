@@ -65,7 +65,7 @@ func (s *Server) Libraries() ([]Library, error) {
 }
 
 func (s *Server) Scrobble(ratingKey int) error {
-	return s.command(fmt.Sprintf("/:/Scrobble?identifier=com.plexapp.plugins.library&key=%d", ratingKey))
+	return s.command(fmt.Sprintf("/:/scrobble?identifier=com.plexapp.plugins.library&key=%d", ratingKey))
 }
 
 func (a *App) AttachServer(server *Server) {

@@ -56,7 +56,7 @@ type LibraryLocation struct {
 func (l *Library) Series(filter bool) ([]Series, error) {
 	f := ""
 	if filter {
-		f = "?type=2unwatchedLeaves=1"
+		f = "?type=2&unwatchedLeaves=1"
 	}
 	d, err := l.s.get(fmt.Sprintf("/library/sections/%d/all%s", l.Key, f))
 	if err != nil {

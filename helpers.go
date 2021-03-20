@@ -1,6 +1,7 @@
 package plex
 
 import (
+	"errors"
 	"io"
 	"io/ioutil"
 	"net/http"
@@ -76,6 +77,9 @@ func (r *httpRequest) do(token string, decode bool) ([]byte, error) {
 	resp, err := r.c.a.o.client.Do(r.r)
 	if err != nil {
 		return nil, err
+	}
+	if resp.StatusCode > 299 {
+		return nil, errors.New(resp.Status)
 	}
 	if decode {
 		hr := &httpResponse{r: resp}
