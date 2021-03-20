@@ -92,3 +92,7 @@ func (u *User) Servers() ([]Server, error) {
 	}
 	return s, nil
 }
+
+func (a *App) AttachUser(user *User) {
+	user.app = a
+}
