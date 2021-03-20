@@ -36,6 +36,7 @@ type Server struct {
 func (s *Server) URL() string {
 	return fmt.Sprintf("%s://%s:%d", s.Scheme, s.Host, s.Port)
 }
+
 func (s *Server) get(endpoint string) ([]byte, error) {
 	return s.app.get(s.URL()+endpoint, s.AccessToken)
 }
@@ -65,4 +66,8 @@ func (s *Server) Libraries() ([]Library, error) {
 
 func (s *Server) Scrobble(ratingKey int) error {
 	return s.command(fmt.Sprintf("/:/Scrobble?identifier=com.plexapp.plugins.library&key=%d", ratingKey))
+}
+
+func (a *App) AttachServer(server *Server) {
+	server.app = a
 }
